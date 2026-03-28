@@ -1,56 +1,39 @@
 import { useEffect, useState } from 'react';
 
 interface TypingTextProps {
-  text: string;
-  speed?: number; // milliseconds per character
-  cursor?: boolean; // show blinking cursor
+  text: string;          // Text to type
+  speed?: number;        // Typing speed in ms per character
+  cursor?: boolean;      // Show blinking cursor
+  onComplete?: () => void; // Callback when typing finishes
 }
 
 const TypingText: React.FC<TypingTextProps> = ({
   text,
-  speed = 30,
+  speed = 40,
   cursor = true,
+  onComplete,
 }) => {
   const [displayedText, setDisplayedText] = useState('');
 
   useEffect(() => {
+    setDisplayedText(''); // Reset when text changes
     let currentIndex = 0;
-    setDisplayedText('');
     const interval = setInterval(() => {
       setDisplayedText((prev) => prev + text[currentIndex]);
       currentIndex++;
       if (currentIndex >= text.length) {
         clearInterval(interval);
+        onComplete?.(); // Trigger callback after typing finishes
       }
     }, speed);
 
     return () => clearInterval(interval);
-  }, [text, speed]);
+  }, [text, speed, onComplete]);
 
   return (
     <span>
       {displayedText}
-      {cursor && <span className="animate-blink">|</span>}
-      <style jsx>{`
-        .animate-blink {
-          display: inline-block;
-          margin-left: 2px;
-          width: 1px;
-          background-color: currentColor;
-          animation: blink 1s steps(2, start) infinite;
-        }
-        @keyframes blink {
-          0% {
-            opacity: 1;
-          }
-          50% {
-            opacity: 0;
-          }
-          100% {
-            opacity: 1;
-          }
-        }
-      `}</style>
+      {cursor && <span className="animate-pulse">|</span>}
     </span>
   );
 };
