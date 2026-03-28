@@ -1,17 +1,39 @@
 [
   {
+    "type": "text",
     "name": "Mary 💕",
-    "message": "Happy 26th Birthday my dear big sister 🎉❤️, Today I thank God for your life and for the blessing you have been to me and everyone around you. You have always been more than a sister to me — you are a guide, a supporter, and someone whose strength and kindness I truly admire. I’m so grateful to have you in my life. As you celebrate your 26th year, I pray that God continues to protect you, guide your steps, and fill your life with peace, joy, and success. May every dream in your heart begin to come true, and may this new age open doors of favor, opportunities, and endless blessings for you. May your days be filled with happiness, your path be bright, and your heart always be at peace. Thank you for being such an amazing sister. I love you so much and I’m always proud of you. Happy Birthday once again. May God bless your new age abundantly. 🙏✨",
-    "media": null
+    "message": "Happy 26th Birthday my dear big sister 🎉❤️"
   },
   {
-    "name": "Bolade ",
-    "message": "Happy birthday to my amazing big sister ❤️ You’ve been more than just a sister to me, you’ve been my guide, my protector, my safe place, and one of the strongest people I know. Through every season of life, your love has remained constant, and I’m forever grateful for you. I may not say it all the time, but you mean so much to me, and I’m blessed to call you my sister. On your special day, I pray that God surrounds you with peace, fills your heart with joy, and grants you success in everything you lay your hands on. May your life be full of laughter, good health, and endless blessings. May every silent prayer in your heart be answered, and may you never lack anything good. Thank you for being you—for your love, your strength, and your beautiful heart. I love you deeply, today and always. Happy birthday, my dearest sister 🎉💖",
-    "media": null
+    "type": "text",
+    "name": "Mary 💕",
+    "message": "Today I thank God for your life and for the blessing you have been to everyone around you."
   },
   {
-    "name": "Olamikusibe",
-    "message": "Happy birthday to my amazing big sister my first best friend and my forever patner in crime thanks for always having my back and for not exposing my secrets i hope your day is as awesome as you are i love you 😘💖💕",
-    "media": null
+    "type": "text",
+    "name": "Mary 💕",
+    "message": "You are more than a sister to me — you are my guide and someone I truly admire."
+  },
+
+  {
+    "type": "text",
+    "name": "Bolade ❤️",
+    "message": "Happy birthday to my amazing big sister ❤️"
+  },
+  {
+    "type": "text",
+    "name": "Bolade ❤️",
+    "message": "You’ve always been my protector, my safe place, and one of the strongest people I know."
+  },
+
+  {
+    "type": "text",
+    "name": "Olamikusibe 💖",
+    "message": "Happy birthday to my first best friend and forever partner in crime 😘💕"
+  },
+  {
+    "type": "text",
+    "name": "Olamikusibe 💖",
+    "message": "Thanks for always having my back and keeping my secrets 😂❤️"
   }
 ]

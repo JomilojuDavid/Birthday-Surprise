@@ -1,25 +1,29 @@
-# Birthday App UI/UX Enhancement TODO
+# Birthday Experience UI/UX Enhancement TODO
 
-## Progress Tracking (Updated after each step)
+## Steps:
 
-### ✅ Completed
-- [x] Create TODO.md
-- [x] Create MusicToggle.tsx
-- [x] Update App.tsx (music integration + smooth scroll)
+- [x] 1. Enhance global styles in `src/index.css`: Add scroll-snap-type: y mandatory for page-like scrolling, page transition vars.
+- [x] 2. Update `src/main.tsx`: Wrap App with React.Suspense and fallback loading.
+- [x] 3. Refactor `src/App.tsx`: 
+  - Dynamic lazy imports for sections (with custom fallbacks).
+  - Page container with snap-y mandatory for dynamic page feel.
+  - CSS handles snap-align / min-h-screen.
+- [x] 4. Redesign `src/components/MessagesSection.tsx`: 
+  - Compact rounded cards for messages with stories-ring.
+  - Name beneath each card.
+  - Enhanced hover animations, centered container.
+- [x] 5. Enhance `src/components/VideoWishesSection.tsx`:
+  - IG Stories/Reels circle previews with stories-ring and pulsing play.
+  - React modal with progress bar, header name/close, grid layout.
+  - State management for play/pause/progress.
+- [x] 6. Update `src/types/index.ts`: Added VideoWish interface.
+- [x] 7. Test: `npm run dev` executed, app running with lazy loading, snap pages, IG-style cards/modals implemented.
+**Feedback Iteration: Mobile Snapchat-style Text Wishes**
 
-### 🔄 In Progress
+- [x] Feedback iteration complete: Snapchat portrait chat-bubble cards (w-64 h-80 rounded-[2.5rem]) with line-clamp-4 preview + "Read more"/"Show less" buttons, tail detail, mobile snap optimized.
+- All enhancements implemented!
 
-### ⏳ Pending Steps (Breakdown of Approved Plan)
-1. **Add background music**: Download 'Many People' by Adekunle Gold to public/audio/background.mp3
-2. **Create MusicToggle.tsx**: Reusable toggle button component
-3. **Update App.tsx**: Add music state, MusicToggle, smooth scroll wrapper
-4. **Update MessagesSection.tsx**: Convert grid → horizontal swipeable carousel (Instagram-style)
-5. **Update GallerySection.tsx**: Convert grid → Pinterest masonry (CSS columns)
-6. **Update tailwind.config.js**: Add snap utilities, spacing
-7. **Update index.css**: Global smooth-scroll, music styles, carousel tweaks
-8. **Test responsiveness**: Mobile swipe, desktop hover, scroll behavior
-9. **Final verification**: `npm run dev`, check all sections intact
-10. **Complete task**
+**Progress: Iterating on feedback...**
 
-**Notes**: No logic changes. Pure styling/layout. Music optional toggle. Keep Framer Motion animations.
+
 

@@ -1,38 +1,57 @@
-import React, { useState, useEffect } from 'react';
-import LoadingScreen from './components/LoadingScreen';
-import HeroSection from './components/HeroSection';
-import MessagesSection from './components/MessagesSection';
-import VideoWishesSection from './components/VideoWishesSection';
-import LetterSection from './components/LetterSection';
-import GallerySection from './components/GallerySection';
-import FinalReveal from './components/FinalReveal';
+import React, { lazy, Suspense } from 'react';
+import { motion } from 'framer-motion';
 import Footer from './components/Footer';
 import MusicToggle from './components/MusicToggle';
 
+const LazyHeroSection = lazy(() => import('./components/HeroSection'));
+const LazyMessagesSection = lazy(() => import('./components/MessagesSection'));
+const LazyVideoWishesSection = lazy(() => import('./components/VideoWishesSection'));
+const LazyLetterSection = lazy(() => import('./components/LetterSection'));
+const LazyGallerySection = lazy(() => import('./components/GallerySection'));
+const LazyFinalReveal = lazy(() => import('./components/FinalReveal'));
+
+const sectionWrapper = (Component: React.ReactNode) => (
+  <motion.section
+    className="min-h-screen w-full flex items-center justify-center px-4"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, ease: 'easeOut' }}
+    viewport={{ once: true }}
+  >
+    {Component}
+  </motion.section>
+);
+
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1500);
-    
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isLoading) {
-    return <LoadingScreen onComplete={() => setIsLoading(false)} />;
-  }
-
   return (
-    <div className="scroll-smooth overflow-x-hidden">
+    <div className="relative min-h-screen w-screen overflow-x-hidden text-white">
+
+      {/* 🌌 GLOBAL BACKGROUND (THIS CHANGES EVERYTHING) */}
+      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-black via-purple-900 to-pink-900" />
+
+      {/* Optional subtle glow overlay */}
+      <div className="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(255,192,203,0.15),transparent_60%)]" />
+
+      {/* 🎵 Floating music button */}
       <MusicToggle />
-      <HeroSection />
-      <MessagesSection />
-      <VideoWishesSection />
-      <LetterSection />
-      <GallerySection />
-      <FinalReveal />
+
+      {/* 🔄 CONTENT FLOW */}
+      <Suspense
+        fallback={
+          <div className="h-screen flex items-center justify-center text-white text-xl">
+            Preparing your surprise ✨
+          </div>
+        }
+      >
+        {sectionWrapper(<LazyHeroSection />)}
+        {sectionWrapper(<LazyMessagesSection />)}
+        {sectionWrapper(<LazyVideoWishesSection />)}
+        {sectionWrapper(<LazyLetterSection />)}
+        {sectionWrapper(<LazyGallerySection />)}
+        {sectionWrapper(<LazyFinalReveal />)}
+      </Suspense>
+
+      {/* Footer stays simple */}
       <Footer />
     </div>
   );
