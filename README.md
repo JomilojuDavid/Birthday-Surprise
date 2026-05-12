@@ -1,53 +1,71 @@
-# React + TypeScript + Vite
+# BirthdayGram 🎂
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A special birthday surprise app designed with Instagram's UI/UX in mind. This interactive experience combines the familiar feel of Instagram with personalized birthday content including messages, photos, videos, and wishes.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Instagram-style Interface**: Clean, mobile-first design mimicking Instagram's layout
+- **Stories**: Interactive story circles featuring birthday messages and video wishes
+- **Feed**: Scrollable posts with messages, photos, and memories
+- **Reels**: Dedicated video section for birthday wishes
+- **Profile**: Complete birthday experience with all sections
+- **Music Toggle**: Background music control
+- **Responsive Design**: Works on mobile and desktop
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 18** with TypeScript
+- **Vite** for fast development
+- **Tailwind CSS** for styling
+- **Framer Motion** for animations
+- **Lucide React** for icons
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+3. Open [http://localhost:5173](http://localhost:5173) in your browser
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── TopBar.tsx          # Instagram-style top navigation
+│   ├── Stories.tsx         # Story circles with birthday content
+│   ├── Feed.tsx            # Main feed with posts
+│   ├── BottomNav.tsx       # Bottom navigation bar
+│   ├── MessagesSection.tsx # Chat-style messages
+│   ├── GallerySection.tsx  # Photo gallery
+│   ├── VideoWishesSection.tsx # Video wishes
+│   └── ...
+├── types/
+│   └── index.ts            # TypeScript interfaces
+└── App.tsx                 # Main app component
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Customization
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
+- **Messages**: Edit `/public/messages.json` to add personalized messages
+- **Gallery**: Add photos to `/public/gallery/`
+- **Videos**: Add video wishes to `/public/videos/`
+- **Audio**: Add background music to `/public/audio/`
+
+## Build for Production
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist/` directory.
 import reactDom from 'eslint-plugin-react-dom'
 
 export default defineConfig([
