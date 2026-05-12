@@ -15,10 +15,10 @@ const GallerySection = () => {
       
       {/* HEADER */}
       <div className="max-w-xl mx-auto text-center mb-12">
-        <h2 className="text-3xl md:text-5xl font-bold">
+        <h2 className="text-3xl font-bold">
           Our Memories ❤️
         </h2>
-        <p className="text-white/60 mt-3 text-sm md:text-base">
+        <p className="text-white/60 mt-3 text-sm">
           Moments I never want to forget
         </p>
       </div>

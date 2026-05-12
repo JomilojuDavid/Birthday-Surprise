@@ -35,7 +35,7 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
         </motion.div>
         
         <motion.div
-          className="text-4xl md:text-5xl font-playfair font-bold mb-4 bg-gradient-to-r from-white to-rose-100 bg-clip-text text-transparent"
+          className="text-3xl font-playfair font-bold mb-4 bg-gradient-to-r from-white to-rose-100 bg-clip-text text-transparent"
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >

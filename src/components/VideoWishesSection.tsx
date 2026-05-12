@@ -126,10 +126,10 @@ const VideoWishesSection = () => {
 
   return (
     <>
-      <section id="videos" className="py-32 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-rose-100 via-white to-lavender-100 min-h-screen">
+      <section id="videos" className="py-20 px-4 bg-black min-h-screen">
         <div className="max-w-7xl mx-auto">
           <motion.h2 
-            className="text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-center mb-4 bg-gradient-to-r from-rose-500 via-pink-500 to-lavender-500 bg-clip-text text-transparent"
+            className="text-3xl font-playfair font-bold text-center mb-4 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -137,7 +137,7 @@ const VideoWishesSection = () => {
             Video Wishes
           </motion.h2>
           <motion.p 
-            className="text-xl md:text-2xl font-poppins font-semibold text-center text-gray-800 mb-24 max-w-3xl mx-auto leading-relaxed"
+            className="text-base font-poppins font-semibold text-center text-white mb-16 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -147,7 +147,7 @@ const VideoWishesSection = () => {
           </motion.p>
 
           <motion.div
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto px-4"
+            className="grid grid-cols-2 gap-4 max-w-2xl mx-auto px-4"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -161,7 +161,7 @@ const VideoWishesSection = () => {
                 onClick={() => openModal(wish)}
               >
                 {/* IG Stories Style Circle Preview */}
-                <div className="stories-ring relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 overflow-hidden rounded-full shadow-2xl hover:shadow-3xl transition-all duration-500 bg-gradient-to-br from-slate-100 to-rose-50/50 border-4 border-white/70 hover:border-rose-400/90 cursor-pointer group-hover:rotate-3">
+                <div className="stories-ring relative w-24 h-24 mx-auto mb-4 overflow-hidden rounded-full shadow-lg border-4 border-white/70 cursor-pointer group-hover:rotate-3">
                   <video 
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 rounded-full"
                     src={wish.videoUrl}
@@ -178,26 +178,26 @@ const VideoWishesSection = () => {
                     animate={{ scale: [1, 1.1, 1] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
                   >
-                    <div className="w-20 h-20 md:w-24 md:h-24 bg-white/30 backdrop-blur-xl rounded-full flex items-center justify-center text-2xl md:text-3xl shadow-2xl border-4 border-white/50 group-hover:bg-white/70 transition-all duration-400 shadow-pulse">
+                    <div className="w-12 h-12 bg-white/30 backdrop-blur-xl rounded-full flex items-center justify-center text-lg shadow-lg border-4 border-white/50 group-hover:bg-white/70 transition-all duration-400">
                       {wish.videoUrl.endsWith('.mp3') ? '🎤' : '▶️'}
                     </div>
                   </motion.div>
 
                   {/* Duration Ring Badge */}
-                  <div className="absolute top-2 right-2 w-12 h-12 md:w-14 md:h-14 bg-rose-500/95 backdrop-blur-md rounded-2xl flex items-center justify-center text-white font-bold text-sm md:text-base shadow-lg border-2 border-white/50">
+                  <div className="absolute top-1 right-1 w-8 h-8 bg-rose-500/95 backdrop-blur-md rounded-lg flex items-center justify-center text-white font-bold text-xs shadow-lg border border-white/50">
                     {wish.duration}
                   </div>
                 </div>
                 
                 {/* Name & Play Prompt */}
                 <div className="text-center">
-                  <h4 className="text-xl md:text-2xl font-playfair font-bold text-gray-900 mb-1 truncate px-2 drop-shadow-sm">
+                  <h4 className="text-sm font-playfair font-bold text-white mb-1 truncate px-2 drop-shadow-sm">
                     {wish.name}
                   </h4>
-                  <div className="flex items-center justify-center gap-1 text-xs md:text-sm text-rose-500 font-semibold">
-                    <div className="w-1.5 h-1.5 bg-rose-400 rounded-full animate-pulse" />
-                    <span>Tap to watch</span>
-                    <motion.div className="w-3 h-3 bg-gradient-to-r from-rose-400 to-lavender-400 rounded-full" whileHover={{ scale: 1.2 }} />
+                  <div className="flex items-center justify-center gap-1 text-xs text-pink-400 font-semibold">
+                    <div className="w-1 h-1 bg-pink-400 rounded-full animate-pulse" />
+                    <span>Tap</span>
+                    <motion.div className="w-2 h-2 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full" whileHover={{ scale: 1.2 }} />
                   </div>
                 </div>
               </motion.div>
@@ -209,32 +209,32 @@ const VideoWishesSection = () => {
       {/* IG Reels Fullscreen Modal */}
       {isModalOpen && currentWish && (
         <div 
-          className="ig-modal fixed inset-0 z-[10001] flex items-center justify-center p-8 md:p-12"
+          className="ig-modal fixed inset-0 z-[10001] flex items-center justify-center p-4"
           onClick={closeModal}
         >
           <div 
-            className="w-full h-full max-w-4xl max-h-[95vh] flex flex-col bg-black rounded-3xl overflow-hidden shadow-2xl mx-auto my-auto"
+            className="w-full h-full max-w-md max-h-screen flex flex-col bg-black rounded-lg overflow-hidden shadow-2xl mx-auto my-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="ig-modal-header px-6 pt-4 pb-2 flex items-center justify-between">
+            <div className="ig-modal-header px-4 pt-3 pb-2 flex items-center justify-between">
               <button 
                 className="text-white/80 hover:text-white text-2xl p-2 rounded-full hover:bg-white/10 transition-all"
                 onClick={closeModal}
               >
                 ×
               </button>
-              <h3 className="font-bold text-lg md:text-xl text-white truncate max-w-xs text-center px-4">
+              <h3 className="font-bold text-base text-white truncate max-w-xs text-center px-4">
                 {currentWish.name}
               </h3>
               <div className="w-10" />
             </div>
 
             {/* Video Player */}
-            <div className="ig-modal-video flex-1 flex items-center justify-center bg-black p-4">
+            <div className="ig-modal-video flex-1 flex items-center justify-center bg-black p-2">
               <video 
                 ref={videoRef}
-                className="w-full h-full max-h-[70vh] object-contain rounded-2xl shadow-2xl"
+                className="w-full h-full max-h-[60vh] object-contain rounded-lg shadow-lg"
                 controls
                 autoPlay
                 playsInline
@@ -245,7 +245,7 @@ const VideoWishesSection = () => {
             </div>
 
             {/* Progress Bar */}
-            <div className="ig-modal-progress mx-6 mb-6">
+            <div className="ig-modal-progress mx-4 mb-4">
               <div 
                 className="ig-modal-progress-bar"
                 style={{ width: `${progress}%` }}

@@ -23,7 +23,7 @@ const MessagesSection = () => {
     <section className="min-h-screen px-4 py-20 flex flex-col items-center">
       {/* HEADER */}
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-5xl font-bold">Messages 💌</h2>
+        <h2 className="text-3xl font-bold">Messages 💌</h2>
         <p className="text-white/60 mt-2 text-sm">From people who love you</p>
       </div>
 
@@ -44,7 +44,7 @@ const MessagesSection = () => {
 
                 {/* MESSAGE BUBBLE */}
                 <div
-                  className={`px-4 py-3 rounded-2xl text-sm md:text-base leading-relaxed ${
+                  className={`px-4 py-3 rounded-2xl text-sm leading-relaxed ${
                     isLeft
                       ? 'bg-white/10 border border-white/10 rounded-bl-none'
                       : 'bg-pink-500 text-white rounded-br-none'

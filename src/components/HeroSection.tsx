@@ -25,12 +25,12 @@ const HeroSection = () => {
       >
 
         {/* MAIN TEXT */}
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight">
+        <h1 className="text-3xl font-bold leading-tight tracking-tight">
           Happy Birthday
         </h1>
 
         <motion.h2
-          className="text-5xl md:text-7xl font-bold mt-2 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent"
+          className="text-4xl font-bold mt-2 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent"
           animate={{ opacity: [0.8, 1, 0.8] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
@@ -38,7 +38,7 @@ const HeroSection = () => {
         </motion.h2>
 
         {/* SUBTEXT */}
-        <p className="mt-6 text-white/60 text-sm md:text-lg leading-relaxed">
+        <p className="mt-6 text-white/60 text-sm leading-relaxed">
           I made something special for you
         </p>
 
@@ -46,7 +46,7 @@ const HeroSection = () => {
         <motion.button
           onClick={scrollToMessages}
           whileTap={{ scale: 0.95 }}
-          className="mt-10 px-8 py-4 rounded-full bg-white text-black font-medium text-sm md:text-base shadow-xl hover:scale-105 transition"
+          className="mt-10 px-8 py-4 rounded-full bg-white text-black font-medium text-sm shadow-xl hover:scale-105 transition"
         >
           Open Your Gift 🎁
         </motion.button>

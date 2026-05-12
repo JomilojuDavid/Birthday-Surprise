@@ -2,14 +2,14 @@ import { motion } from 'framer-motion';
 
 const LetterSection = () => {
   return (
-    <section className="py-32 px-4 md:px-8 lg:px-16 bg-gradient-to-t from-white via-rose-50/30 to-lavender-50/30 min-h-screen">
+    <section className="py-20 px-4 bg-black min-h-screen">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.2, ease: 'easeOut' }}
-          className="glass-card rounded-3xl p-12 md:p-20 shadow-2xl border border-white/30 relative overflow-hidden max-w-5xl mx-auto"
+          className="glass-card rounded-3xl p-8 shadow-2xl border border-white/30 relative overflow-hidden max-w-5xl mx-auto"
         >
           {/* Decorative envelope */}
           <motion.div
@@ -23,7 +23,7 @@ const LetterSection = () => {
           </motion.div>
 
           <motion.h2 
-            className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-12 text-center bg-gradient-to-r from-gray-900 via-gray-700 to-rose-600 bg-clip-text text-transparent drop-shadow-2xl"
+            className="text-3xl font-display font-bold mb-12 text-center bg-gradient-to-r from-gray-900 via-gray-700 to-rose-600 bg-clip-text text-transparent drop-shadow-2xl"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -33,10 +33,10 @@ const LetterSection = () => {
           </motion.h2>
 
           {/* Beautiful Letter Content */}
-          <div className="space-y-8 prose prose-2xl max-w-none mx-auto text-left lg:prose-wide">
-            <blockquote className="glass-card text-2xl md:text-3xl font-serif italic leading-[1.6] p-12 rounded-3xl border-l-[8px] border-rose-400 shadow-2xl relative bg-gradient-to-r from-rose-500/5 via-white/50 to-lavender-500/5">
+          <div className="space-y-8 prose prose-lg max-w-none mx-auto text-left">
+            <blockquote className="glass-card text-lg font-serif italic leading-relaxed p-8 rounded-3xl border-l-[8px] border-rose-400 shadow-2xl relative bg-gradient-to-r from-rose-500/5 via-white/50 to-lavender-500/5">
               <motion.span 
-                className="block font-bold text-4xl md:text-5xl text-rose-600 mb-12 drop-shadow-2xl text-center"
+                className="block font-bold text-3xl text-rose-600 mb-8 drop-shadow-2xl text-center"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -148,7 +148,7 @@ const LetterSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 3 }}
           >
-            <p className="text-3xl md:text-4xl font-display italic text-rose-600 drop-shadow-xl">With all my love ❤️</p>
+            <p className="text-2xl font-display italic text-rose-500 drop-shadow-xl">With all my love ❤️</p>
           </motion.div>
         </motion.div>
       </div>

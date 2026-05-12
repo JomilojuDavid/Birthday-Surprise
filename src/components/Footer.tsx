@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const Footer = () => {
   return (
-    <footer className="py-16 px-4 md:px-8 bg-gradient-to-t from-rose-900/20 to-transparent backdrop-blur-sm">
+    <footer className="py-16 px-4 bg-gradient-to-t from-rose-900/20 to-transparent backdrop-blur-sm">
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -11,10 +11,10 @@ const Footer = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="text-4xl mb-6">💕</div>
-          <p className="text-2xl md:text-3xl font-playfair font-semibold text-white mb-4">
+          <p className="text-2xl font-playfair font-semibold text-white mb-4">
             Made with ❤️
           </p>
-          <p className="text-xl font-poppins text-white/90">
+          <p className="text-lg font-poppins text-white/90">
             by [The Jomiloju David]
           </p>
           <p className="text-sm font-poppins text-white/70 mt-8">

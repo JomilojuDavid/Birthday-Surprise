@@ -74,7 +74,7 @@ const FinalReveal = () => {
         </motion.div>
 
         <motion.h2 
-          className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-12 leading-tight"
+          className="text-3xl font-playfair font-bold mb-12 leading-tight"
           initial={{ opacity: 0, y: 50 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1, delay: 0.5 }}
@@ -86,7 +86,7 @@ const FinalReveal = () => {
           {words.map((word, index) => (
             <motion.p
               key={index}
-              className="text-xl md:text-2xl lg:text-3xl font-poppins font-light leading-relaxed"
+              className="text-lg font-poppins font-light leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { 
                 opacity: 1, 
@@ -108,12 +108,12 @@ const FinalReveal = () => {
           animate={isVisible ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 1, delay: 2.5 }}
         >
-          <p className="text-6xl md:text-7xl font-playfair font-bold bg-gradient-to-r from-white to-rose-100 bg-clip-text text-transparent drop-shadow-2xl mb-8">
+          <p className="text-4xl font-playfair font-bold bg-gradient-to-r from-white to-rose-100 bg-clip-text text-transparent drop-shadow-2xl mb-8">
             I love you! 💖
           </p>
-          <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col gap-4 justify-center items-center">
             <motion.button
-              className="px-12 py-4 bg-white/20 backdrop-blur-xl rounded-2xl font-poppins font-semibold text-xl border-2 border-white/30 hover:border-white/50 transition-all duration-300 hover:bg-white/30 hover:scale-105 shadow-xl hover:shadow-2xl"
+              className="px-8 py-3 bg-white/20 backdrop-blur-xl rounded-2xl font-poppins font-semibold text-base border-2 border-white/30 hover:border-white/50 transition-all duration-300 hover:bg-white/30 hover:scale-105 shadow-xl hover:shadow-2xl"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
